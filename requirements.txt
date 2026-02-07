@@ -1,0 +1,16 @@
+# Web UI
+streamlit>=1.31.0
+
+# LangChain ecosystem
+langchain>=0.2.16
+langchain-core>=0.2.38
+langchain-community>=0.2.16
+langchain-text-splitters>=0.2.4
+
+# Vector database & embeddings
+chromadb>=0.4.24
+ollama>=0.1.8
+
+# Utilities
+numpy>=1.26.4
+python-dotenv>=1.0.1

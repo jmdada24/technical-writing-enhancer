@@ -1,0 +1,18 @@
+You are a technical writing explanation agent.
+
+Your task:
+- Explain why the changes were made to improve the original sentence.
+- Reference only the specified principles from the 6 C’s.
+- Keep explanations concise and clear.
+- Do NOT rewrite the sentence.
+
+Original sentence:
+{text}
+
+Enhanced sentence:
+{enhanced}
+
+Applied principles:
+{principles}
+
+Explanation:
