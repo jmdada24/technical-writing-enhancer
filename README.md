@@ -1,71 +1,92 @@
-# Technical Writing Enhancer
+# Technical Writing Enhancement Agent (6C-Based)
 
-A tool that leverages LLMs and RAG to improve technical writing by checking mechanics and providing guidance based on the 6 C's of technical writing: clarity, completeness, conciseness, concreteness, consistency, and courtesy.
+An agentic NLP system that enhances technical writing using the 6C framework:
+
+- Clarity  
+- Completeness  
+- Conciseness  
+- Concreteness  
+- Consistency  
+- Courtesy  
+
+The system first analyzes whether improvement is necessary, then selectively applies only the relevant principles while preserving the original meaning.
+
+---
+
+## System Flow
+
+User Input
+↓
+Analysis (Stage 1)
+↓
+Decision Gate
+↓
+Selective Guideline Loading
+↓
+Enhancement (Stage 2)
+↓
+Output (Original + Enhanced + Applied 6Cs)
+
+
+---
 
 ## Features
 
-- **Mechanics Correction**: Grammar, spelling, punctuation, and capitalization fixes using conservative LLM-based approach
-- **6 C's Analysis**: Retrieval-augmented generation (RAG) to provide writing improvement suggestions based on established principles
-- **Document Loading**: Automatic loading and chunking of 6 C's principle documents from markdown files
+- Selective 6C-based enhancement  
+- Conservative rewriting (minimal edits)  
+- No over-editing of already-correct text  
+- Local LLM inference via Ollama  
+- Simple Streamlit interface  
 
-## Project Structure
+---
 
+## Structure
 ```
 src/
-  ├── app.py              # Main application entry point
-  ├── main.py             # CLI interface
-  ├── config.py           # Configuration and paths
-  ├── agents/             # Agent classes for different tasks
-  ├── prompts/            # LLM prompt templates
-  ├── rag/                # RAG pipeline and document loading
-  └── utils/              # Utility functions
+├── app.py
+├── pipeline.py
+├── llm_client.py
+├── config.py
+├── prompts/
+└── knowledge/
+
 data/
-  └── six_cs/             # Principle markdown files
-vectorstore/
-  └── chroma_db/          # Vector database storage
+└── six_cs/
 ```
+
+---
 
 ## Requirements
 
 - Python 3.10+
-- [Ollama](https://ollama.ai/) with llama3.1:8b and nomic-embed-text models installed
+- [Ollama](https://ollama.ai/)
+- Model: `llama3.1:8b`
 
-## Installation
+---
 
-1. Create and activate a virtual environment:
-   ```bash
-   python3 -m venv myenv
-   source myenv/bin/activate
-   ```
+## Setup
 
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. Ensure Ollama models are available:
-   ```bash
-   ollama pull llama3.1:8b
-   ollama pull nomic-embed-text
-   ```
-
-## Usage
-
-Run the application:
 ```bash
-python src/main.py
-```
+git clone <your-repo-url>
+cd <repo-name>
 
-Or start the Streamlit interface:
+python3 -m venv myenv
+source myenv/bin/activate
+
+pip install -r requirements.txt
+Pull the model:
+
+ollama pull llama3.1:8b
+ollama serve
+
+
+Run
 ```bash
 streamlit run src/app.py
 ```
+Notes
+Designed for academic and professional technical writing.
 
-## Configuration
+Uses a two-stage agentic inference pipeline.
 
-Configuration is managed in [`src/config.py`](src/config.py):
-- `LLM_MODEL`: Ollama model for text generation (default: llama3.1:8b)
-- `EMBED_MODEL`: Ollama model for embeddings (default: nomic-embed-text)
-- `TOP_K`: Number of RAG documents to retrieve (default: 4)
-- `DATA_PATH`: Path to 6 C's principle documents
-- `CHROMA_PATH`: Path to vector database storage
+Operates locally (privacy-friendly).

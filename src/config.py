@@ -1,13 +1,8 @@
 from pathlib import Path
 
-# Models (Ollama)
-LLM_MODEL = "llama3.1:8b"
-EMBED_MODEL = "nomic-embed-text"
+OLLAMA_MODEL = "llama3.1:8b"
+OLLAMA_HOST = "http://127.0.0.1:11434"
 
-# Paths
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-DATA_PATH = PROJECT_ROOT / "data" / "six_cs"
-CHROMA_PATH = PROJECT_ROOT / "vectorstore" / "chroma_db"
-
-# Retrieval defaults
-TOP_K = 4
+SIX_CS_DIR = PROJECT_ROOT / "data" / "six_cs"
+PROMPTS_DIR = Path(__file__).resolve().parent / "prompts"

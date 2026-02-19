@@ -48,7 +48,7 @@ The contract should be signed on the dotted line by Mr. Aguirre.
 As newcomers to our community, the merchants of ABC Company wish to make available a variety of complimentary products and services.
 
 ### Improved
-As newcomers to our community, you are invited to take advantage of a variety of complimentary products and services offered by the merchants of ABC Company.
+As newcomers to our community, you are invited to make advantage of a variety of complimentary products and services offered by the merchants of ABC Company.
 
 ---
 
