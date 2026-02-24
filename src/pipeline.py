@@ -2,9 +2,10 @@ import json
 import re
 from typing import Dict, Any, List
 
-from config import OLLAMA_MODEL, SIX_CS_DIR, PROMPTS_DIR
-from llm_client import OllamaClient
+from config import GROQ_MODEL, SIX_CS_DIR, PROMPTS_DIR
+from llm_client import GroqClient
 from knowledge.loader import load_guidelines
+
 
 ALLOWED_CS = {"clarity", "completeness", "conciseness", "concreteness", "consistency", "courtesy"}
 
@@ -71,7 +72,7 @@ def run_pipeline(user_text: str, rewrite_strength: str = "light", debug: bool = 
             **({"analysis": {}} if debug else {}),
         }
 
-    client = OllamaClient(model=OLLAMA_MODEL)
+    client = GroqClient(model=GROQ_MODEL)
 
     # 1) Analyze (agentic planning)
     analyze_tpl = _read_prompt("analyze.txt")

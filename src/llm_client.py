@@ -1,8 +1,10 @@
 from typing import Optional
-import ollama
+from groq import Groq
+from config import GROQ_API_KEY, GROQ_MODEL
 
-class OllamaClient:
-    def __init__(self, model: str):
+class GroqClient:
+    def __init__(self, model: str = GROQ_MODEL):
+        self.client = Groq(api_key=GROQ_API_KEY)
         self.model = model
 
     def generate(self, prompt: str, system: Optional[str] = None, temperature: float = 0.2) -> str:
@@ -11,9 +13,9 @@ class OllamaClient:
             messages.append({"role": "system", "content": system})
         messages.append({"role": "user", "content": prompt})
 
-        resp = ollama.chat(
+        resp = self.client.chat.completions.create(
             model=self.model,
             messages=messages,
-            options={"temperature": temperature},
+            temperature=temperature,
         )
-        return (resp["message"]["content"] or "").strip()
+        return (resp.choices[0].message.content or "").strip()

@@ -4,5 +4,8 @@ streamlit>=1.32.0
 # Ollama Python client
 ollama>=0.3.0
 
+# Groq API client
+groq>=0.4.0
+
 # Environment variables (optional but useful)
 python-dotenv>=1.0.1
