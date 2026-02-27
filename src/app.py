@@ -60,6 +60,7 @@ if run_btn:
     st.subheader("Enhanced")
     st.write(enhanced)
 
+
     if show_applied:
         st.subheader("Applied 6Cs")
         if applied:
@@ -67,6 +68,13 @@ if run_btn:
             st.write(", ".join(pretty))
         else:
             st.info("No 6C changes needed.")
+
+        notes = result.get("notes", []) or []
+        if notes:
+            st.markdown("**Notes:**")
+            for n in notes:
+                st.write(f"- {n}")
+
 
     if show_analysis and "analysis" in result:
         st.subheader("Analysis (debug)")

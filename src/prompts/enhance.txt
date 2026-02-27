@@ -22,6 +22,8 @@ Lightness rules (very important):
 - Do not change active/passive voice unless it fixes a real clarity issue.
 - Do not change wording that is already correct unless it clearly improves the selected Cs.
 - If an edit could introduce ambiguity, meaning drift, or role drift, do not apply it.
+- You MAY normalize unnatural inverted structures into standard subject-verb-object order if clarity is selected.
+- You MAY replace bureaucratic filler with simpler equivalents if conciseness is selected.
 
 Selected 6Cs: {{APPLY}}
 Rewrite strength: {{STRENGTH}}
