@@ -13,7 +13,7 @@ C_LABELS = {
 
 st.set_page_config(
     page_title="Technical Writing Enhancer (6 C’s)",
-    page_icon="📝",
+    page_icon="src/favicon_withBg.png",
     layout="centered",
 )
 
